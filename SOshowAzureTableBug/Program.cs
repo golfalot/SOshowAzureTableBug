@@ -14,9 +14,11 @@ namespace SOshowAzureTableBug
 {
     class Program
     {
-        const string connectionTableSAS = "TableSecondaryEndpoint=http://127.0.0.1:10002/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;SharedAccessSignature=st=2020-02-24T12%3A47%3A31Z&se=2020-02-25T12%3A47%3A31Z&sp=r&sv=2018-03-28&tn=ratingreflocationa20200217aandmarketvalueb20200217bxml&sig=wc7tW52nstzdGMzlQuaRuakShJ%2BHmpbv8jbMlnn1lug%3D";
+        // the SAS token is immaterial in reproducing the problem
+        const string connectionTableSAS = "TableSecondaryEndpoint=http://127.0.0.1:10002/devstoreaccount1-secondary;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;SharedAccessSignature=immaterial";
         static void Main(string[] args)
         {
+
             /* Legacy Table SDK */
             var storageAccountLegacy = LEGACY_STORAGE.CloudStorageAccount.Parse(connectionTableSAS);
             var tableClientLegacy = storageAccountLegacy.CreateCloudTableClient();
