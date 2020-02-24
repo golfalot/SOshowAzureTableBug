@@ -40,8 +40,8 @@ namespace SOshowAzureTableBug
             var tableRequestOptionsNewest = new NEWEST_TABLE.TableRequestOptions() { LocationMode = NEWEST_TABLE.LocationMode.SecondaryOnly };
             tableClientNewest.DefaultRequestOptions = tableRequestOptionsNewest;
 
-            NEWEST_TABLE.CloudTable tableNewset = tableClientNewest.GetTableReference("foo"); // don't need table to exist to show the issue
-            NEWEST_TABLE.TableOperation retrieveOperationNewset = NEWEST_TABLE.TableOperation.Retrieve(string.Empty, string.Empty, new List<string>() { "bar" });
+            var tableNewset = tableClientNewest.GetTableReference("foo"); // don't need table to exist to show the issue
+            var retrieveOperationNewset = NEWEST_TABLE.TableOperation.Retrieve(string.Empty, string.Empty, new List<string>() { "bar" });
 
             /* throws Microsoft.Azure.Cosmos.Table.StorageException
              * Exception thrown while initializing request: This operation can only be executed against the primary storage location
