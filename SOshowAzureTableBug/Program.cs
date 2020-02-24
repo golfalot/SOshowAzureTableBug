@@ -14,7 +14,7 @@ namespace SOshowAzureTableBug
 {
     class Program
     {
-        // the SAS token is immaterial in reproducing the problem
+        // the SAS token is immaterial in reproducing the problem so can use a dummy string
         const string connectionTableSAS = "TableSecondaryEndpoint=http://127.0.0.1:10002/devstoreaccount1-secondary;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;SharedAccessSignature=immaterial";
         static void Main(string[] args)
         {
